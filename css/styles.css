@@ -344,7 +344,6 @@ template {
 
 body {
   margin: 0;
-  color: #F3F3F3;
 }
 
 main {
@@ -352,6 +351,10 @@ main {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+}
+
+section {
+  border-bottom: 1px solid #d5a269;
 }
 
 h1 {
@@ -491,6 +494,25 @@ li {
   color: #F3F3F3;
 }
 
+.title-large {
+  font-size: 1.5em;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.75rem;
+  text-transform: uppercase;
+  color: #d5a269;
+  margin-top: 0.5rem;
+}
+
+.paragraph-large {
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #d5a269;
+  margin-top: 0.5rem;
+}
+
 .read-more {
   font-size: 0.7rem;
   font-family: "Montserrat", sans-serif;
@@ -551,6 +573,7 @@ li {
 }
 #nav .nav-wrapper {
   display: none;
+  max-width: 1200px;
 }
 @media (min-width: 768px) {
   #nav .nav-wrapper {
@@ -571,11 +594,55 @@ li {
   }
 }
 
+footer {
+  background: #1a1a1a;
+}
+footer .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 10px;
+}
+@media (min-width: 768px) {
+  footer .footer {
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 40px 30px;
+  }
+}
+footer .footer svg {
+  margin-right: 5px;
+}
+footer .footer a {
+  color: #d5a269;
+}
+footer .footer .contact,
+footer .footer .credentials {
+  display: flex;
+  flex-direction: column;
+}
+footer .footer .contact p,
+footer .footer .credentials p {
+  letter-spacing: 0.25rem;
+  line-height: 2.5rem;
+  color: #d5a269;
+}
+footer .footer .contact .small-text,
+footer .footer .credentials .small-text {
+  font-size: 0.75rem;
+}
+footer .footer .contact {
+  align-items: flex-start;
+}
+footer .footer .credentials {
+  align-items: flex-end;
+}
+
 .hero {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85) 15%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.55) 90%), url("../assets/img/hero-mobile.jpg") no-repeat 40% 50%;
   background-size: cover;
   height: 600px;
-  border-bottom: 1px solid #d5a269;
 }
 @media (min-width: 768px) {
   .hero {
@@ -597,9 +664,12 @@ li {
 @media (min-width: 768px) {
   .hero-text {
     text-align: initial;
-    max-width: none;
     top: 35%;
     left: 5%;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: none;
+    margin: 0;
   }
 }
 .hero-text h1 {
@@ -653,18 +723,16 @@ li {
   }
 }
 
-.brochure {
+.cta {
   padding-top: 25px;
   padding-bottom: 25px;
   background-color: #1a1a1a;
-  border-bottom: 1px solid #d5a269;
 }
 
 .quick-words {
   background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
   background-size: cover;
   background-attachment: fixed;
-  border-bottom: 1px solid #d5a269;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -700,6 +768,8 @@ li {
 }
 .quick-words-title {
   text-align: left;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media (min-width: 768px) {
   .quick-words-title {
@@ -751,6 +821,46 @@ li {
   color: #d5a269;
 }
 
+.stats {
+  background: #e8e8e8;
+}
+.stats-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.stats-set {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 20%;
+}
+.stats .line::after {
+  position: absolute;
+  width: 50px;
+  top: 75%;
+  right: -30%;
+}
+.stats .title-small, .stats-number {
+  color: black;
+}
+.stats-number {
+  font-size: 3rem;
+  color: #d5a269;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  padding-bottom: 50px;
+  line-height: 3rem;
+}
+.stats-text {
+  margin-right: -0.75rem;
+}
+
 @media (min-width: 768px) {
   .card {
     display: flex;
@@ -786,7 +896,7 @@ li {
   border: 1px solid grey;
 }
 .card .card-wrapper.one {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat top center;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
   background-size: cover;
 }
 .card .card-wrapper.one .lines span::before {
@@ -806,7 +916,7 @@ li {
   }
 }
 .card .card-wrapper.two {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat top center;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0% 20%;
   background-size: cover;
 }
 @media (min-width: 768px) {
@@ -870,8 +980,80 @@ li {
   width: max-content;
 }
 
+.news {
+  background: rgb(36, 36, 36);
+}
+.news-wrapper {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.news-tile-wrapper {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+@media (min-width: 768px) {
+  .news-tile-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.news img {
+  position: relative;
+  z-index: 1;
+  width: 450px;
+  height: 320px;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+.news-tile-text {
+  position: relative;
+  text-align: left;
+  background: #e8e8e8;
+  padding: 15px;
+  z-index: 2;
+  width: 400px;
+  margin-top: -110px;
+}
+.news-tile-text .text-block {
+  color: black;
+  padding-top: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.news-tile-text .paragraph-large {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.news-tile-text .read-more a {
+  color: #d5a269;
+}
+@media (min-width: 768px) {
+  .news-tile-text .read-more .line::after {
+    left: 103%;
+  }
+}
+.news .tile-stories,
+.news .tile-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #page-breed .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/hero.jpg") no-repeat left;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lipa-fend-mobile.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  #page-breed .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lipa-fend-desktop.jpg") no-repeat top left;
+    background-size: cover;
+    height: 600px;
+  }
+}
+#page-breed .quick-words {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+  background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
   background-size: cover;
 }
 
@@ -933,7 +1115,7 @@ li {
   flex-direction: column;
   width: clamp(360px, 80%, 900px);
   margin: -4rem 4rem 2rem 4rem;
-  background-color: #fff;
+  background-color: #F3F3F3;
   padding: 2rem;
   text-align: left;
 }
@@ -963,47 +1145,79 @@ li {
   color: #d5a269;
 }
 
-footer {
-  background: #1a1a1a;
-}
-footer .footer {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 40px 10px;
+#page-tcna .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/show-zadok-mobile.jpg") no-repeat center center;
+  background-size: cover;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 }
 @media (min-width: 768px) {
-  footer .footer {
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 1400px;
-    padding: 40px 30px;
+  #page-tcna .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/show-zadok.jpg") no-repeat center center;
+    background-size: cover;
+    height: 600px;
   }
 }
-footer .footer svg {
-  margin-right: 5px;
+#page-tcna .standards {
+  background-color: #202020;
 }
-footer .footer a {
-  color: #d5a269;
+#page-tcna .standards .offset-card {
+  margin: 0;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 }
-footer .footer .contact,
-footer .footer .credentials {
+#page-tcna .standards .overlap-quote {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#page-tcna .standards .main-btn {
+  display: block;
+  width: 65%;
+  margin: 10px auto 50px;
+}
+#page-tcna .test {
+  background: #e8e8e8;
+}
+#page-tcna .test-wrapper {
+  padding: 50px;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
+  gap: 50px;
+  margin: 0 auto;
+  text-align: left;
 }
-footer .footer .contact p,
-footer .footer .credentials p {
-  letter-spacing: 0.25rem;
-  line-height: 2.5rem;
-  color: #d5a269;
+
+#page-breeders .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia") no-repeat center center;
+  background-size: cover;
 }
-footer .footer .contact .small-text,
-footer .footer .credentials .small-text {
-  font-size: 0.75rem;
+@media (min-width: 768px) {
+  #page-breeders .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia.jpg") no-repeat top left;
+    background-size: cover;
+    height: 600px;
+  }
 }
-footer .footer .contact {
-  align-items: flex-start;
+
+#page-events .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center center;
+  background-size: cover;
 }
-footer .footer .credentials {
-  align-items: flex-end;
+@media (min-width: 768px) {
+  #page-events .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center 25%;
+    background-size: cover;
+    height: 600px;
+  }
+}
+
+#page-stories .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  #page-stories .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
+    background-size: cover;
+    height: 600px;
+  }
 }/*# sourceMappingURL=styles.css.map */

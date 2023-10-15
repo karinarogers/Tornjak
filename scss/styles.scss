@@ -11,7 +11,9 @@
 $gold: #d5a269;
 $secondary: #d4c4bc;
 $dark: #1a1a1a;
+$dark-medium: rgb(36 36 36);
 $white: #F3F3F3;
+$off-white: #e8e8e8;
 $break-med: 600px;
 $break-lg: 768px;
 $break-xl: 1024px;
@@ -83,13 +85,16 @@ $shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 
 body {
     margin: 0;
-    color: $white;
 }
 
 main {
     font-size: 1em;
     @include center;
     text-align: center;
+}
+
+section {
+    border-bottom: 1px solid $gold;
 }
 
 h1 {
@@ -230,6 +235,23 @@ li {
     color: $white;
 }
 
+.title-large {
+    font-size: 1.5em;
+    @include playfair();
+    margin: 0;
+    letter-spacing: $spacing-large;
+    text-transform: uppercase;
+    color: $gold;
+    margin-top: 0.5rem;
+}
+
+.paragraph-large {
+    font-size: 1rem;
+    @include montserrat();
+    color: $gold;
+    margin-top: 0.5rem;
+}
+
 //CTA read more
 .read-more {
     font-size: 0.7rem;
@@ -269,10 +291,11 @@ li {
 
 
 // =========================
-// Header
+// Header & Footer
 // =========================
 
 //main nav
+// logo: 62 x 40
 #nav {
     background: $dark;
     padding: 20px;
@@ -305,6 +328,7 @@ li {
 
     .nav-wrapper {
         display: none;
+        max-width: 1200px;
 
         @include desktop {
             display: flex;
@@ -329,16 +353,70 @@ li {
     }
 }
 
+// Footer
+footer {
+    background: $dark;
+
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 40px 10px;
+
+        @include desktop() {
+            justify-content: space-between;
+            margin: 0 auto;
+            max-width: 1400px;
+            padding: 40px 30px;
+        }
+
+        svg {
+            margin-right: 5px;
+        }
+
+        a {
+            color: $gold;
+        }
+
+        .contact,
+        .credentials {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                letter-spacing: $spacing-medium;
+                line-height: 2.5rem;
+                color: $gold;
+
+
+            }
+
+            .small-text {
+                font-size: 0.75rem;
+            }
+        }
+
+        .contact {
+            align-items: flex-start;
+        }
+
+        .credentials {
+            align-items: flex-end;
+        }
+    }
+}
+
 // =========================
 // Homepage
 // =========================
 
 // homepage - hero banner
+//background img size: 477 x 600 (mobile)
+//background img size: 1400 x 788 (desktop)
 .hero {
     background: linear-gradient(to bottom, rgba(0, 0, 0, .85) 15%, rgba(0, 0, 0, 0.3) 45%, rgba(0, 0, 0, 0.55) 90%), url("../assets/img/hero-mobile.jpg") no-repeat 40% 50%;
     background-size: cover;
     height: 600px;
-    border-bottom: 1px solid $gold;
 
     @include desktop() {
         background: linear-gradient(to right, rgba(0, 0, 0, .85) 15%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 0.55) 90%), url("../assets/img/hero.jpg") no-repeat left;
@@ -358,9 +436,11 @@ li {
 
         @include desktop() {
             text-align: initial;
-            max-width: none;
             top: 35%;
             left: 5%;
+            width: max-content;
+            max-width: none;
+            margin: 0;
         }
 
         h1 {
@@ -415,21 +495,19 @@ li {
     }
 }
 
-//homepage - brochure
-.brochure {
+//homepage - cta button
+.cta {
     padding-top: 25px;
     padding-bottom: 25px;
-    // background-color: #535353;
     background-color: $dark;
-    border-bottom: 1px solid $gold;
 }
 
 //homepage - quote
+// <img> : 350 x 253
 .quick-words {
     background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
     background-size: cover;
     background-attachment: fixed;
-    border-bottom: 1px solid $gold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -437,8 +515,6 @@ li {
     @include desktop() {
         height: 500px;
     }
-
-
 
     &-wrapper {
         padding-top: 50px;
@@ -467,6 +543,7 @@ li {
 
     &-title {
         text-align: left;
+        width: fit-content;
 
         @include desktop () {
             position: relative;
@@ -489,7 +566,6 @@ li {
             top: -13%;
         }
     }
-
 
     &-bottom {
         background-color: #1a1a1a;
@@ -522,7 +598,55 @@ li {
     }
 }
 
+//homepage - stats
+.stats {
+    background: $off-white;
+
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 25px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &-set {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-basis: 20%;
+    }
+
+    .line::after {
+        position: absolute;
+        width: 50px;
+        top: 75%;
+        right: -30%;
+    }
+
+    .title-small,
+    &-number {
+        color: black;
+    }
+
+    &-number {
+        font-size: 3rem;
+        color: $gold;
+        @include montserrat-thin();
+        padding-bottom: 50px;
+        line-height: 3rem;
+    }
+
+    &-text {
+        margin-right: -$spacing-large;
+    }
+}
+
 //homepage - cards 
+// background img size: 314 x 400
 .card {
     @include desktop {
         display: flex;
@@ -562,7 +686,7 @@ li {
         }
 
         &.one {
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat top center;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
             background-size: cover;
 
             .lines span::before {
@@ -583,7 +707,7 @@ li {
         }
 
         &.two {
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat top center;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0% 20%;
             background-size: cover;
 
             @include desktop {
@@ -653,13 +777,96 @@ li {
 
 }
 
+//homepage - news
+// <img> : 450 x 320
+.news {
+    background: $dark-medium;
+
+    &-wrapper {
+        padding-top: 50px;
+        padding-bottom: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &-tile-wrapper {
+        padding-top: 100px;
+        padding-bottom: 100px;
+
+        @include desktop {
+            display: flex;
+            justify-content: space-around;
+        }
+    }
+
+    img {
+        position: relative;
+        z-index: 1;
+        width: 450px;
+        height: 320px;
+        box-shadow: $shadow;
+    }
+
+    &-tile-text {
+        position: relative;
+        text-align: left;
+        background: $off-white;
+        padding: 15px;
+        z-index: 2;
+        width: 400px;
+        margin-top: -110px;
+
+        .text-block {
+            color: black;
+            padding-top: 0.5rem;
+            @include montserrat();
+        }
+
+        .paragraph-large {
+            @include montserrat-bold();
+        }
+
+        .read-more {
+            a {
+                color: $gold;
+            }
+
+            .line::after {
+                @include desktop {
+                    left: 103%;
+                }
+            }
+        }
+    }
+
+    .tile-stories,
+    .tile-events {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
 // =========================
 // Breed Page
 // =========================
 
 #page-breed {
     .hero {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/hero.jpg") no-repeat left;
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lipa-fend-mobile.jpg") no-repeat center center;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lipa-fend-desktop.jpg") no-repeat top left;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+
+    .quick-words {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+        background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
         background-size: cover;
     }
 }
@@ -727,7 +934,7 @@ li {
         flex-direction: column;
         width: clamp(360px, 80%, 900px);
         margin: -4rem 4rem 2rem 4rem;
-        background-color: #fff;
+        background-color: $white;
         padding: 2rem;
         text-align: left;
 
@@ -761,60 +968,106 @@ li {
     }
 }
 
-// =========================
-// Footer
-// =========================
-footer {
-    background: $dark;
 
-    .footer {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 40px 10px;
+// =========================
+// Club TCNA Page
+// =========================
+#page-tcna {
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/show-zadok-mobile.jpg") no-repeat center center;
+        background-size: cover;
+        box-shadow: $shadow;
 
         @include desktop() {
-            justify-content: space-between;
-            margin: 0 auto;
-            max-width: 1400px;
-            padding: 40px 30px;
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/show-zadok.jpg") no-repeat center center;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+
+    .standards {
+        background-color: #202020;
+
+        .offset-card {
+            margin: 0;
+            box-shadow: $shadow;
         }
 
-        svg {
-            margin-right: 5px;
+        .overlap-quote {
+            padding-top: 50px;
+            padding-bottom: 50px;
         }
 
-        a {
-            color: $gold;
+        .main-btn {
+            display: block;
+            width: 65%;
+            margin: 10px auto 50px;
         }
+    }
 
-        .contact,
-        .credentials {
+    .test {
+        background: $off-white;
+
+        &-wrapper {
+            padding: 50px;
+            max-width: 1000px;
             display: flex;
             flex-direction: column;
-
-            p {
-                letter-spacing: $spacing-medium;
-                line-height: 2.5rem;
-                color: $gold;
-
-
-            }
-
-            .small-text {
-                font-size: 0.75rem;
-            }
-        }
-
-        .contact {
-            align-items: flex-start;
-        }
-
-        .credentials {
-            align-items: flex-end;
+            gap: 50px;
+            margin: 0 auto;
+            text-align: left;
         }
     }
 }
+
+// =========================
+// Breeders Page
+// =========================
+#page-breeders {
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia") no-repeat center center;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia.jpg") no-repeat top left;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+}
+
+// =========================
+// Events Page
+// =========================
+#page-events {
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center center;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center 25%;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+}
+
+// =========================
+// Stories Page
+// =========================
+#page-stories {
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+}
+
 
 
 @import "breed-page";
