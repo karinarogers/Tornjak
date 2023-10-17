@@ -544,6 +544,10 @@ li {
   }
 }
 
+.lowercase {
+  text-transform: none;
+}
+
 #nav {
   background: #1a1a1a;
   padding: 20px;
@@ -553,17 +557,21 @@ li {
   align-items: center;
 }
 #nav .hamburger {
+  position: relative;
+  z-index: 100;
   background: #1a1a1a;
   border: 1px solid transparent;
   color: #d5a269;
-}
-#nav .hamburger .material-icons {
-  font-size: 23px;
+  width: 40px;
+  height: 40px;
 }
 #nav .hamburger:hover {
   border: 1px solid #d5a269;
 }
-#nav .hamburger .close {
+#nav .hamburger .material-icons {
+  font-size: 23px;
+}
+#nav .hamburger .close-icon {
   display: none;
 }
 @media (min-width: 768px) {
@@ -573,25 +581,56 @@ li {
 }
 #nav .nav-wrapper {
   display: none;
+  flex-direction: column;
+  background: #1a1a1a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 0;
+  transform: translateY(-100%);
+  transition: transform ease-in-out 0.3s;
+  z-index: 99;
+  color: white;
+  list-style: none;
   max-width: 1200px;
+}
+#nav .nav-wrapper a {
+  color: #d5a269;
+  letter-spacing: 0.25rem;
+}
+#nav .nav-wrapper a:hover {
+  border-bottom: 1px solid #d5a269;
+}
+#nav .nav-wrapper .nav-item {
+  display: block;
+  text-align: center;
+  margin: 1rem 4rem;
+  font-size: 0.9rem;
+  color: white;
+  text-decoration: none;
 }
 @media (min-width: 768px) {
   #nav .nav-wrapper {
+    position: relative;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
-    flex: auto;
-    padding-inline-start: 40px;
+    transform: translateY(0%);
+    padding-left: 40px;
+    width: 100%;
   }
-  #nav .nav-wrapper li {
+  #nav .nav-wrapper .nav-item {
+    margin: 0;
     border-bottom: 1px solid transparent;
   }
-  #nav .nav-wrapper li:hover {
-    border-bottom: 1px solid #d5a269;
+  #nav .nav-wrapper .nav-item a {
+    font-size: 0.9rem;
   }
-  #nav .nav-wrapper a {
-    color: #d5a269;
-    letter-spacing: 0.25rem;
-  }
+}
+#nav .show-menu {
+  transform: translateY(34%);
+  display: flex;
 }
 
 footer {
@@ -981,7 +1020,7 @@ footer .footer .credentials {
 }
 
 .news {
-  background: rgb(36, 36, 36);
+  background: #202020;
 }
 .news-wrapper {
   padding-top: 50px;
@@ -1162,7 +1201,9 @@ footer .footer .credentials {
 }
 #page-tcna .standards .offset-card {
   margin: 0;
-  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+#page-tcna .standards .offset-card.center {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 #page-tcna .standards .overlap-quote {
   padding-top: 50px;
@@ -1173,17 +1214,13 @@ footer .footer .credentials {
   width: 65%;
   margin: 10px auto 50px;
 }
-#page-tcna .test {
-  background: #e8e8e8;
+#page-tcna .quick-words .line::after {
+  right: -22%;
 }
-#page-tcna .test-wrapper {
-  padding: 50px;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  margin: 0 auto;
-  text-align: left;
+@media (min-width: 768px) {
+  #page-tcna .quick-words .line::after {
+    right: -25%;
+  }
 }
 
 #page-breeders .hero {
@@ -1197,17 +1234,128 @@ footer .footer .credentials {
     height: 600px;
   }
 }
-
-#page-events .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center center;
+#page-breeders .quote {
+  font-size: 1rem;
+}
+#page-breeders .quote .cta {
+  background: transparent;
+}
+#page-breeders .quote .main-btn {
+  display: inline-block;
+  width: auto;
+}
+#page-breeders .quote p {
+  padding-bottom: 50px;
+}
+#page-breeders .long-text {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
   background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10%;
+  padding-bottom: 10%;
 }
 @media (min-width: 768px) {
-  #page-events .hero {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center 25%;
-    background-size: cover;
-    height: 600px;
+  #page-breeders .long-text {
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
+}
+#page-breeders .long-text-wrapper {
+  background: #1a1a1a;
+  width: 93%;
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: left;
+  padding: 5%;
+}
+@media (min-width: 768px) {
+  #page-breeders .long-text-wrapper {
+    width: 80%;
+  }
+}
+#page-breeders .long-text-wrapper p {
+  margin-bottom: 20px;
+}
+#page-breeders .long-text-wrapper .paragraph-large {
+  margin-bottom: 5px;
+}
+#page-breeders .long-text-wrapper .last {
+  margin-bottom: 40px;
+}
+@media (min-width: 768px) {
+  #page-breeders .long-text-wrapper .last {
+    margin-bottom: 75px;
+  }
+}
+#page-breeders .long-text p:last-of-type {
+  text-align: center;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+#page-breeders .long-text .line::after {
+  right: 44%;
+  top: -7%;
+  width: 10%;
+  min-width: 45px;
+}
+@media (min-width: 768px) {
+  #page-breeders .long-text .line::after {
+    right: 45%;
+    top: -30%;
+  }
+}
+#page-breeders #breeder-questions {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+  background-size: cover;
+}
+
+#page-events {
+  background: #202020;
+}
+#page-events .event-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#page-events .event-headline {
+  margin: 50px;
+}
+#page-events .event-card {
+  background: rgb(36, 36, 36);
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  width: 93%;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  #page-events .event-card {
+    width: 70%;
+  }
+}
+#page-events .event-card-date {
+  position: absolute;
+  background: #e8e8e8;
+  padding: 5px;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+  width: fit-content;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  top: 2%;
+  left: 2%;
+}
+#page-events .event-card-date p {
+  color: black;
+}
+#page-events .event-card-img {
+  width: 100%;
+}
+#page-events .event-card-bottom {
+  padding: 5%;
+  text-align: left;
+}
+#page-events .event-card-top {
+  position: relative;
 }
 
 #page-stories .hero {
