@@ -81,8 +81,7 @@ abbr[title] {
   /* 1 */
   text-decoration: underline;
   /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
   /* 2 */
 }
 
@@ -370,14 +369,21 @@ h1 {
 }
 
 h2 {
-  font-size: 1.5em;
+  margin: 0;
+  margin-top: 0.15rem;
+  font-size: 1.25em;
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  margin: 0;
-  letter-spacing: 0.75rem;
   text-transform: uppercase;
   color: #d5a269;
-  margin-top: 0.5rem;
+  letter-spacing: 0.55rem;
+}
+@media (min-width: 768px) {
+  h2 {
+    letter-spacing: 0.75rem;
+    font-size: 1.5em;
+    margin-top: 0.25rem;
+  }
 }
 
 h3 {
@@ -386,8 +392,13 @@ h3 {
   font-family: "Playfair Display", serif;
   font-weight: 400;
   color: #d5a269;
-  letter-spacing: 0.75rem;
   text-transform: uppercase;
+  letter-spacing: 0.55rem;
+}
+@media (min-width: 768px) {
+  h3 {
+    letter-spacing: 0.75rem;
+  }
 }
 
 p {
@@ -395,8 +406,13 @@ p {
   font-size: 0.85rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
-  line-height: 1.5rem;
+  line-height: 1.4rem;
   color: #F3F3F3;
+}
+@media (min-width: 768px) {
+  p {
+    line-height: 1.5rem;
+  }
 }
 
 a,
@@ -419,22 +435,22 @@ li {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
 
 .main-btn {
   display: inline-block;
-  width: -moz-min-content;
   width: min-content;
-  letter-spacing: 0.75rem;
   border: 1px solid #d5a269;
   padding: 10px 14px;
   background: rgba(26, 26, 26, 0.7);
   font-size: 0.75rem;
+  letter-spacing: 0.55rem;
 }
 @media (min-width: 600px) {
   .main-btn {
     display: initial;
+    letter-spacing: 0.75rem;
   }
 }
 .main-btn .main-btn-text {
@@ -468,9 +484,14 @@ li {
 .logo p {
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.2rem;
   font-size: 30px;
   padding-left: 10px;
+}
+@media (min-width: 768px) {
+  .logo p {
+    letter-spacing: 0.25rem;
+  }
 }
 .logo p a {
   color: rgba(255, 255, 255, 0.75);
@@ -484,25 +505,37 @@ li {
 
 .title-small {
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  letter-spacing: 0.75rem;
   font-family: "Montserrat", sans-serif;
   line-height: 1.5rem;
   text-transform: uppercase;
   color: #F3F3F3;
+  letter-spacing: 0.55rem;
+}
+@media (min-width: 768px) {
+  .title-small {
+    letter-spacing: 0.75rem;
+    font-size: 0.75rem;
+  }
 }
 
 .title-large {
-  font-size: 1.5em;
+  margin: 0;
+  margin-top: 0.5rem;
+  font-size: 1.25em;
   font-family: "Playfair Display", serif;
   font-weight: 400;
-  margin: 0;
-  letter-spacing: 0.75rem;
   text-transform: uppercase;
   color: #d5a269;
-  margin-top: 0.5rem;
+  letter-spacing: 0.55rem;
+}
+@media (min-width: 768px) {
+  .title-large {
+    letter-spacing: 0.75rem;
+    font-size: 1.5em;
+  }
 }
 
 .paragraph-large {
@@ -517,11 +550,16 @@ li {
   font-size: 0.7rem;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  letter-spacing: 0.75rem;
   font-family: "Montserrat", sans-serif;
   line-height: 2.5rem;
   text-transform: uppercase;
   color: #d5a269;
+  letter-spacing: 0.55rem;
+}
+@media (min-width: 768px) {
+  .read-more {
+    letter-spacing: 0.75rem;
+  }
 }
 
 .line {
@@ -546,6 +584,10 @@ li {
 
 .lowercase {
   text-transform: none;
+}
+
+.clear-float {
+  clear: both;
 }
 
 #nav {
@@ -663,9 +705,15 @@ footer .footer .credentials {
 }
 footer .footer .contact p,
 footer .footer .credentials p {
-  letter-spacing: 0.25rem;
+  letter-spacing: 0.2rem;
   line-height: 2.5rem;
   color: #d5a269;
+}
+@media (min-width: 768px) {
+  footer .footer .contact p,
+  footer .footer .credentials p {
+    letter-spacing: 0.25rem;
+  }
 }
 footer .footer .contact .small-text,
 footer .footer .credentials .small-text {
@@ -696,19 +744,19 @@ footer .footer .credentials {
   top: 8%;
   margin: 0 auto;
   color: #F3F3F3;
-  letter-spacing: 0.75rem;
+  letter-spacing: 0.55rem;
   text-transform: uppercase;
   text-align: center;
 }
 @media (min-width: 768px) {
   .hero-text {
-    text-align: initial;
     top: 35%;
     left: 5%;
-    width: -moz-max-content;
     width: max-content;
     max-width: none;
     margin: 0;
+    text-align: initial;
+    letter-spacing: 0.75rem;
   }
 }
 .hero-text h1 {
@@ -723,7 +771,6 @@ footer .footer .credentials {
 }
 .hero-text .lines {
   color: #d5a269;
-  width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
@@ -759,6 +806,16 @@ footer .footer .credentials {
   .hero-text .lines span::after {
     right: -5%;
     top: 50%;
+  }
+}
+
+#home .hero .title-small {
+  margin: 0 auto;
+  max-width: 300px;
+}
+@media (min-width: 768px) {
+  #home .hero .title-small {
+    max-width: none;
   }
 }
 
@@ -807,7 +864,6 @@ footer .footer .credentials {
 }
 .quick-words-title {
   text-align: left;
-  width: -moz-fit-content;
   width: fit-content;
 }
 @media (min-width: 768px) {
@@ -889,7 +945,7 @@ footer .footer .credentials {
   color: black;
 }
 .stats-number {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #d5a269;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
@@ -897,7 +953,12 @@ footer .footer .credentials {
   line-height: 3rem;
 }
 .stats-text {
-  margin-right: -0.75rem;
+  margin-right: -0.55rem;
+}
+@media (min-width: 768px) {
+  .stats-text {
+    letter-spacing: 0.75rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -907,7 +968,6 @@ footer .footer .credentials {
 }
 .card .lines {
   color: #d5a269;
-  width: -moz-fit-content;
   width: fit-content;
   position: relative;
 }
@@ -938,6 +998,10 @@ footer .footer .credentials {
   background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
   background-size: cover;
 }
+.card .card-wrapper.one:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
 .card .card-wrapper.one .lines span::before {
   left: -17%;
 }
@@ -963,6 +1027,10 @@ footer .footer .credentials {
     order: -1;
   }
 }
+.card .card-wrapper.two:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 20%;
+  background-size: cover;
+}
 .card .card-wrapper.two .lines span::before {
   left: -25%;
 }
@@ -981,6 +1049,10 @@ footer .footer .credentials {
 }
 .card .card-wrapper.three {
   background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-dagon.jpg") no-repeat 20% 20%;
+  background-size: cover;
+}
+.card .card-wrapper.three:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-dagon.jpg") no-repeat 20% 20%;
   background-size: cover;
 }
 .card .card-wrapper.three .lines span::before {
@@ -1015,7 +1087,6 @@ footer .footer .credentials {
 }
 .card span {
   display: block;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1028,31 +1099,51 @@ footer .footer .credentials {
   max-width: 1200px;
   margin: 0 auto;
 }
+.news-text {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.news-tile {
+  padding-top: 50px;
+}
 .news-tile-wrapper {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 @media (min-width: 768px) {
   .news-tile-wrapper {
     display: flex;
     justify-content: space-around;
+    padding-bottom: 60px;
   }
 }
 .news img {
   position: relative;
   z-index: 1;
   width: 450px;
-  height: 320px;
+  max-width: 95%;
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+}
+@media (min-width: 768px) {
+  .news img {
+    height: 320px;
+  }
 }
 .news-tile-text {
   position: relative;
   text-align: left;
   background: #e8e8e8;
-  padding: 15px;
+  padding: 4%;
   z-index: 2;
   width: 400px;
-  margin-top: -110px;
+  max-width: 90%;
+  margin-top: -50px;
+}
+@media (min-width: 768px) {
+  .news-tile-text {
+    margin-top: -110px;
+    padding: 15px;
+  }
 }
 .news-tile-text .text-block {
   color: black;
@@ -1090,10 +1181,36 @@ footer .footer .credentials {
     height: 600px;
   }
 }
-#page-breed .quick-words {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
-  background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
-  background-size: cover;
+#page-breed .stats-set {
+  width: 50%;
+  flex-basis: 50%;
+}
+@media (min-width: 768px) {
+  #page-breed .stats-set {
+    max-width: 25%;
+  }
+}
+#page-breed .stats-number {
+  font-size: 1.75rem;
+  padding-bottom: 0;
+}
+@media (min-width: 768px) {
+  #page-breed .stats-number {
+    font-size: 2rem;
+  }
+}
+#page-breed hr {
+  width: 40px;
+  margin-top: 20px;
+  color: #d5a269;
+}
+#page-breed .card-wrapper {
+  height: 33.33%;
+}
+#page-breed .cta {
+  background: #202020;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .two-col {
@@ -1108,6 +1225,7 @@ footer .footer .credentials {
   justify-content: center;
   width: clamp(360px, 80%, 900px);
   height: 40vh;
+  max-width: 93%;
 }
 .two-col-text {
   display: flex;
@@ -1119,7 +1237,7 @@ footer .footer .credentials {
   display: flex;
   flex-direction: column;
   gap: 5%;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   text-align: left;
   font-size: 0.75rem;
   color: #fff;
@@ -1127,6 +1245,7 @@ footer .footer .credentials {
 @media (min-width: 768px) {
   .two-col-text-block {
     flex-direction: row;
+    margin-top: 1.5rem;
   }
 }
 .two-col-text-block p {
@@ -1147,20 +1266,27 @@ footer .footer .credentials {
 @media (min-width: 768px) {
   .overlap-quote {
     flex-direction: row;
+    justify-content: center;
   }
+}
+.overlap-quote img {
+  max-width: 93%;
 }
 .overlap .offset-card {
   display: flex;
   flex-direction: column;
   width: clamp(360px, 80%, 900px);
-  margin: -4rem 4rem 2rem 4rem;
+  margin: 2rem 4rem 2rem 4rem;
+  max-width: 105%;
   background-color: #F3F3F3;
-  padding: 2rem;
+  padding: 1rem;
   text-align: left;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 }
 @media (min-width: 768px) {
   .overlap .offset-card {
     margin: -4rem 4rem 4rem 4rem;
+    padding: 2rem;
     order: 1;
   }
 }
@@ -1182,6 +1308,87 @@ footer .footer .credentials {
 }
 .overlap .read-more a {
   color: #d5a269;
+}
+
+.square {
+  float: left;
+  position: relative;
+  width: 100%;
+  padding-bottom: 85%;
+  /* = width for a 1:1 aspect ratio */
+  background-color: #1E1E1E;
+}
+@media (min-width: 768px) {
+  .square {
+    width: 33.33%;
+    padding-bottom: 25%;
+  }
+}
+.square.one {
+  background: #202020;
+}
+.square.one .table {
+  border: 1px solid grey;
+}
+.square.two {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-mia.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.two:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-mia.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.three {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.three:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.four {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.four:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.five {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.five:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.six {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square.six:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+  background-size: cover;
+}
+.square .content {
+  position: absolute;
+  height: 100%;
+  /* = 100% - 2*5% padding */
+  width: 100%;
+  /* = 100% - 2*5% padding */
+  padding: 5%;
+}
+.square .table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.square .table:hover {
+  border: 1px solid grey;
+}
+.square .table-cell {
+  display: table-cell;
+  vertical-align: middle;
 }
 
 #page-tcna .hero {
@@ -1224,18 +1431,27 @@ footer .footer .credentials {
 }
 
 #page-breeders .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia") no-repeat center center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-mobile.jpg") no-repeat center center;
   background-size: cover;
 }
 @media (min-width: 768px) {
   #page-breeders .hero {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia.jpg") no-repeat top left;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-desktop.jpg") no-repeat center center;
     background-size: cover;
     height: 600px;
   }
 }
+#page-breeders .quick-words {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+  background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+  background-size: cover;
+}
 #page-breeders .quote {
   font-size: 1rem;
+}
+#page-breeders .quote img {
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 #page-breeders .quote .cta {
   background: transparent;
@@ -1247,114 +1463,105 @@ footer .footer .credentials {
 #page-breeders .quote p {
   padding-bottom: 50px;
 }
-#page-breeders .long-text {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+#page-breeders .square h2 {
+  font-size: 1.25rem;
+}
+#page-breeders .square .table {
+  border: none;
+}
+#page-breeders .square .table:hover {
+  border: 1px solid grey;
+}
+#page-breeders .square.one {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-brita-pup.jpg") no-repeat center;
   background-size: cover;
-  background-attachment: fixed;
-  padding-top: 10%;
-  padding-bottom: 10%;
 }
-@media (min-width: 768px) {
-  #page-breeders .long-text {
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
+#page-breeders .square.one:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-brita-pup.jpg") no-repeat center;
+  background-size: cover;
 }
-#page-breeders .long-text-wrapper {
-  background: #1a1a1a;
-  width: 93%;
-  max-width: 1200px;
-  margin: 50px auto;
-  text-align: left;
-  padding: 5%;
+#page-breeders .square.two {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background-size: cover;
 }
-@media (min-width: 768px) {
-  #page-breeders .long-text-wrapper {
-    width: 80%;
-  }
+#page-breeders .square.two:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background-size: cover;
 }
-#page-breeders .long-text-wrapper p {
-  margin-bottom: 20px;
+#page-breeders .square.three {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+  background-size: cover;
 }
-#page-breeders .long-text-wrapper .paragraph-large {
-  margin-bottom: 5px;
-}
-#page-breeders .long-text-wrapper .last {
-  margin-bottom: 40px;
-}
-@media (min-width: 768px) {
-  #page-breeders .long-text-wrapper .last {
-    margin-bottom: 75px;
-  }
-}
-#page-breeders .long-text p:last-of-type {
-  text-align: center;
-  padding-left: 8%;
-  padding-right: 8%;
-}
-#page-breeders .long-text .line::after {
-  right: 44%;
-  top: -7%;
-  width: 10%;
-  min-width: 45px;
-}
-@media (min-width: 768px) {
-  #page-breeders .long-text .line::after {
-    right: 45%;
-    top: -30%;
-  }
-}
-#page-breeders #breeder-questions {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+#page-breeders .square.three:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+  background-size: cover;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
   background-size: cover;
 }
 
-#page-events {
+#article.page-events {
   background: #202020;
 }
-#page-events .event-cards {
+#article.page-events .event-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#page-events .event-headline {
+#article.page-events .event-headline {
   margin: 50px;
 }
-#page-events .event-card {
+#article.page-events .event-card {
   background: rgb(36, 36, 36);
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   width: 93%;
   margin-bottom: 50px;
 }
 @media (min-width: 768px) {
-  #page-events .event-card {
+  #article.page-events .event-card {
     width: 70%;
+    max-width: 1000px;
   }
 }
-#page-events .event-card-date {
+#article.page-events .event-card-date {
   position: absolute;
   background: #e8e8e8;
   padding: 5px;
   font-family: "Playfair Display", serif;
   font-weight: 400;
   text-transform: uppercase;
-  width: -moz-fit-content;
   width: fit-content;
   box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
   top: 2%;
   left: 2%;
 }
-#page-events .event-card-date p {
+#article.page-events .event-card-date p {
   color: black;
 }
-#page-events .event-card-img {
+#article.page-events .event-card-img {
   width: 100%;
 }
-#page-events .event-card-bottom {
+#article.page-events .event-card-bottom {
   padding: 5%;
   text-align: left;
 }
-#page-events .event-card-top {
+#article.page-events .event-card-bottom h2 {
+  margin-top: 0;
+}
+#article.page-events .event-card-bottom p {
+  margin-top: 10px;
+}
+@media (min-width: 768px) {
+  #article.page-events .event-card-bottom .line::after {
+    right: -33%;
+  }
+}
+#article.page-events .event-card-top {
   position: relative;
 }
 
@@ -1368,4 +1575,73 @@ footer .footer .credentials {
     background-size: cover;
     height: 600px;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+#membership {
+  background: rgb(36, 36, 36);
+}
+#membership .membership-form {
+  padding: 5%;
+}
+#membership .membership-form iframe {
+  height: 3650px;
+}
+@media (min-width: 768px) {
+  #membership .membership-form iframe {
+    height: 3300px;
+  }
+}
+
+#voting {
+  background: rgb(36, 36, 36);
+}
+#voting .voting-form {
+  padding: 5%;
+}
+#voting .voting-form iframe {
+  height: 3520px;
+}
+@media (min-width: 768px) {
+  #voting .voting-form iframe {
+    height: 2590px;
+  }
+}
+
+#article.unethical-breeders .event-card {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+@media (min-width: 768px) {
+  #article.unethical-breeders .event-card {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+}
+#article.unethical-breeders .event-card-wrapper {
+  background: #1a1a1a;
+  width: 93%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#article.unethical-breeders .event-card-wrapper img {
+  width: 100%;
+}
+#article.unethical-breeders .event-card-bottom {
+  text-align: left;
+  padding: 5%;
+}
+#article.unethical-breeders .event-card-title {
+  text-align: center;
+}
+#article.unethical-breeders .event-card-ending {
+  text-align: center;
+}
+#article.unethical-breeders .event-card hr {
+  width: 50px;
+  height: 1px;
+  background-color: #d5a269;
+  border: none;
+}

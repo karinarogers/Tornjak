@@ -21,8 +21,10 @@ $break-xl: 1024px;
 $font-playfair: 'Playfair Display', serif;
 $font-montserrat: 'Montserrat', sans-serif;
 $spacing-normal: normal;
-$spacing-medium: 0.25rem; //need to adjust
+$spacing-medium: 0.25rem;
+$spacing-medium-mobile: 0.2rem;
 $spacing-large: .75rem;
+$spacing-large-mobile: .55rem;
 $line-height-lg: 1.75rem;
 $shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 
@@ -109,13 +111,19 @@ h1 {
 }
 
 h2 {
-    font-size: 1.5em;
-    @include playfair();
     margin: 0;
-    letter-spacing: $spacing-large;
+    margin-top: 0.15rem;
+    font-size: 1.25em;
+    @include playfair();
     text-transform: uppercase;
     color: $gold;
-    margin-top: 0.5rem;
+    letter-spacing: $spacing-large-mobile;
+
+    @include desktop {
+        letter-spacing: $spacing-large;
+        font-size: 1.5em;
+        margin-top: 0.25rem;
+    }
 }
 
 h3 {
@@ -123,16 +131,24 @@ h3 {
     font-size: 1.75em;
     @include playfair();
     color: $gold;
-    letter-spacing: $spacing-large;
     text-transform: uppercase;
+    letter-spacing: $spacing-large-mobile;
+
+    @include desktop {
+        letter-spacing: $spacing-large;
+    }
 }
 
 p {
     margin: 0;
     font-size: 0.85rem;
     @include montserrat-thin();
-    line-height: 1.5rem;
+    line-height: 1.4rem;
     color: $white;
+
+    @include desktop {
+        line-height: 1.5rem;
+    }
 }
 
 a,
@@ -153,7 +169,7 @@ li {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 // =========================
@@ -164,14 +180,15 @@ li {
 .main-btn {
     display: inline-block;
     width: min-content;
-    letter-spacing: $spacing-large;
     border: 1px solid $gold;
     padding: 10px 14px;
     background: rgb(26, 26, 26, 0.7);
     font-size: 0.75rem;
+    letter-spacing: $spacing-large-mobile;
 
     @include tablet-up () {
         display: initial;
+        letter-spacing: $spacing-large;
     }
 
     .main-btn-text {
@@ -207,9 +224,13 @@ li {
 
     p {
         @include playfair();
-        letter-spacing: $spacing-medium;
+        letter-spacing: $spacing-medium-mobile;
         font-size: 30px;
         padding-left: 10px;
+
+        @include desktop {
+            letter-spacing: $spacing-medium;
+        }
 
         a {
             color: rgba(255, 255, 255, .75);
@@ -227,23 +248,33 @@ li {
 //font designs
 .title-small {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     @include montserrat();
-    letter-spacing: $spacing-large;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5rem;
     text-transform: uppercase;
     color: $white;
+    letter-spacing: $spacing-large-mobile;
+
+    @include desktop {
+        letter-spacing: $spacing-large;
+        font-size: 0.75rem;
+    }
 }
 
 .title-large {
-    font-size: 1.5em;
-    @include playfair();
     margin: 0;
-    letter-spacing: $spacing-large;
+    margin-top: 0.5rem;
+    font-size: 1.25em;
+    @include playfair();
     text-transform: uppercase;
     color: $gold;
-    margin-top: 0.5rem;
+    letter-spacing: $spacing-large-mobile;
+
+    @include desktop {
+        letter-spacing: $spacing-large;
+        font-size: 1.5em;
+    }
 }
 
 .paragraph-large {
@@ -257,15 +288,15 @@ li {
 .read-more {
     font-size: 0.7rem;
     @include montserrat();
-    letter-spacing: $spacing-large;
     font-family: 'Montserrat', sans-serif;
     line-height: 2.5rem;
     text-transform: uppercase;
     color: $gold;
+    letter-spacing: $spacing-large-mobile;
 
-    // a:hover {
-    //     color: white;
-    // }
+    @include desktop {
+        letter-spacing: $spacing-large;
+    }
 }
 
 .line {
@@ -293,6 +324,10 @@ li {
     text-transform: none;
 }
 
+//clear float
+.clear-float {
+    clear: both;
+}
 
 
 // =========================
@@ -431,11 +466,13 @@ footer {
             flex-direction: column;
 
             p {
-                letter-spacing: $spacing-medium;
+                letter-spacing: $spacing-medium-mobile;
                 line-height: 2.5rem;
                 color: $gold;
 
-
+                @include desktop {
+                    letter-spacing: $spacing-medium;
+                }
             }
 
             .small-text {
@@ -477,17 +514,18 @@ footer {
         top: 8%;
         margin: 0 auto;
         color: $white;
-        letter-spacing: $spacing-large;
+        letter-spacing: $spacing-large-mobile;
         text-transform: uppercase;
         text-align: center;
 
         @include desktop() {
-            text-align: initial;
             top: 35%;
             left: 5%;
             width: max-content;
             max-width: none;
             margin: 0;
+            text-align: initial;
+            letter-spacing: $spacing-large;
         }
 
         h1 {
@@ -542,6 +580,15 @@ footer {
     }
 }
 
+#home .hero .title-small {
+    margin: 0 auto;
+    max-width: 300px;
+
+    @include desktop {
+        max-width: none;
+    }
+}
+
 //homepage - cta button
 .cta {
     padding-top: 25px;
@@ -549,7 +596,7 @@ footer {
     background-color: $dark;
 }
 
-//homepage - quote
+//homepage - quick words
 // <img> : 350 x 253
 .quick-words {
     background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
@@ -680,7 +727,7 @@ footer {
     }
 
     &-number {
-        font-size: 3rem;
+        font-size: 2rem;
         color: $gold;
         @include montserrat-thin();
         padding-bottom: 50px;
@@ -688,7 +735,11 @@ footer {
     }
 
     &-text {
-        margin-right: -$spacing-large;
+        margin-right: -$spacing-large-mobile;
+
+        @include desktop {
+            letter-spacing: $spacing-large;
+        }
     }
 }
 
@@ -736,6 +787,11 @@ footer {
             background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
             background-size: cover;
 
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+                background-size: cover;
+            }
+
             .lines span::before {
                 left: -17%;
 
@@ -761,6 +817,11 @@ footer {
                 order: -1;
             }
 
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 20%;
+                background-size: cover;
+            }
+
             .lines span::before {
                 left: -25%;
 
@@ -781,6 +842,11 @@ footer {
         &.three {
             background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-dagon.jpg") no-repeat 20% 20%;
             background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-dagon.jpg") no-repeat 20% 20%;
+                background-size: cover;
+            }
 
             .lines span::before {
                 left: -17%;
@@ -836,13 +902,23 @@ footer {
         margin: 0 auto;
     }
 
+    &-text {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
+    &-tile {
+        padding-top: 50px;
+    }
+
     &-tile-wrapper {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 30px;
+        padding-bottom: 30px;
 
         @include desktop {
             display: flex;
             justify-content: space-around;
+            padding-bottom: 60px;
         }
     }
 
@@ -850,18 +926,28 @@ footer {
         position: relative;
         z-index: 1;
         width: 450px;
-        height: 320px;
+        max-width: 95%;
         box-shadow: $shadow;
+
+        @include desktop {
+            height: 320px;
+        }
     }
 
     &-tile-text {
         position: relative;
         text-align: left;
         background: $off-white;
-        padding: 15px;
+        padding: 4%;
         z-index: 2;
         width: 400px;
-        margin-top: -110px;
+        max-width: 90%;
+        margin-top: -50px;
+
+        @include desktop {
+            margin-top: -110px;
+            padding: 15px;
+        }
 
         .text-block {
             color: black;
@@ -911,13 +997,43 @@ footer {
         }
     }
 
-    .quick-words {
-        background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
-        background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
-        background-size: cover;
+    .stats-set {
+        width: 50%;
+        flex-basis: 50%;
+
+        @include desktop {
+            max-width: 25%;
+
+        }
+    }
+
+    .stats-number {
+        font-size: 1.75rem;
+        padding-bottom: 0;
+
+        @include desktop {
+            font-size: 2rem;
+        }
+    }
+
+    hr {
+        width: 40px;
+        margin-top: 20px;
+        color: $gold;
+    }
+
+    .card-wrapper {
+        height: 33.33%;
+    }
+
+    .cta {
+        background: $dark-medium;
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
 }
 
+//breed - hero text
 .two-col {
     display: flex;
     justify-content: center;
@@ -930,6 +1046,7 @@ footer {
         justify-content: center;
         width: clamp(360px, 80%, 900px);
         height: 40vh;
+        max-width: 93%;
     }
 
     &-text {
@@ -942,13 +1059,14 @@ footer {
             display: flex;
             flex-direction: column;
             gap: 5%;
-            margin-top: 1.5rem;
+            margin-top: .5rem;
             text-align: left;
             font-size: 0.75rem;
             color: #fff;
 
             @include desktop {
                 flex-direction: row;
+                margin-top: 1.5rem;
             }
 
             p {
@@ -959,7 +1077,7 @@ footer {
 }
 
 
-// breed - overlap card
+// breed - overlap/offset card
 .overlap {
     display: flex;
     justify-content: center;
@@ -973,6 +1091,11 @@ footer {
 
         @include desktop {
             flex-direction: row;
+            justify-content: center;
+        }
+
+        img {
+            max-width: 93%;
         }
     }
 
@@ -980,13 +1103,16 @@ footer {
         display: flex;
         flex-direction: column;
         width: clamp(360px, 80%, 900px);
-        margin: -4rem 4rem 2rem 4rem;
+        margin: 2rem 4rem 2rem 4rem;
+        max-width: 105%;
         background-color: $white;
-        padding: 2rem;
+        padding: 1rem;
         text-align: left;
+        box-shadow: $shadow;
 
         @include desktop {
             margin: -4rem 4rem 4rem 4rem;
+            padding: 2rem;
             order: 1;
         }
 
@@ -1014,6 +1140,107 @@ footer {
         color: $gold;
     }
 }
+
+//breed - squares
+//background img - 575 x 575
+.square {
+    float: left;
+    position: relative;
+    width: 100%;
+    padding-bottom: 85%;
+    /* = width for a 1:1 aspect ratio */
+    background-color: #1E1E1E;
+
+    @include desktop {
+        width: 33.33%;
+        padding-bottom: 25%;
+
+    }
+
+    &.one {
+        background: $dark-medium;
+
+        .table {
+            border: 1px solid grey;
+        }
+    }
+
+    &.two {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-mia.jpg") no-repeat 0 15%;
+        background-size: cover;
+
+        &:hover {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-mia.jpg") no-repeat 0 15%;
+            background-size: cover;
+        }
+    }
+
+    &.three {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+        background-size: cover;
+
+        &:hover {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-pandora.jpg") no-repeat 0 15%;
+            background-size: cover;
+        }
+    }
+
+    &.four {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+        background-size: cover;
+
+        &:hover {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+            background-size: cover;
+        }
+    }
+
+    &.five {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+        background-size: cover;
+
+        &:hover {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+            background-size: cover;
+        }
+    }
+
+    &.six {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+        background-size: cover;
+
+        &:hover {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-ola.jpg") no-repeat 0 15%;
+            background-size: cover;
+        }
+    }
+
+    .content {
+        position: absolute;
+        height: 100%;
+        /* = 100% - 2*5% padding */
+        width: 100%;
+        /* = 100% - 2*5% padding */
+        padding: 5%;
+    }
+
+    .table {
+        display: table;
+        width: 100%;
+        height: 100%;
+
+
+        &:hover {
+            border: 1px solid grey;
+        }
+    }
+
+    .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
 
 
 // =========================
@@ -1080,18 +1307,30 @@ footer {
 // =========================
 #page-breeders {
     .hero {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia") no-repeat center center;
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-mobile.jpg") no-repeat center center;
         background-size: cover;
 
         @include desktop() {
-            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-mia.jpg") no-repeat top left;
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-desktop.jpg") no-repeat center center;
             background-size: cover;
             height: 600px;
         }
     }
 
+    .quick-words {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+        background: url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+        background-size: cover;
+    }
+
     .quote {
         font-size: 1rem;
+
+        img {
+            padding-top: 25px;
+            padding-bottom: 25px;
+
+        }
 
         .cta {
             background: transparent;
@@ -1107,88 +1346,65 @@ footer {
         }
     }
 
-    .long-text {
-        background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
-        background-size: cover;
-        background-attachment: fixed;
-        padding-top: 10%;
-        padding-bottom: 10%;
-
-        @include desktop {
-            padding-top: 5%;
-            padding-bottom: 5%;
-        }
-
-        &-wrapper {
-            background: $dark;
-            width: 93%;
-            max-width: 1200px;
-            margin: 50px auto;
-            text-align: left;
-            padding: 5%;
-
-            @include desktop() {
-                width: 80%;
-            }
-
-            p {
-                margin-bottom: 20px;
-            }
-
-            .paragraph-large {
-                margin-bottom: 5px;
-            }
-
-            .last {
-                margin-bottom: 40px;
-
-                @include desktop() {
-                    margin-bottom: 75px;
-                }
-            }
-        }
-
-        p:last-of-type {
-            text-align: center;
-            padding-left: 8%;
-            padding-right: 8%;
+    .square {
+        h2 {
+            font-size: 1.25rem;
 
         }
 
-        .line::after {
-            right: 44%;
-            top: -7%;
-            width: 10%;
-            min-width: 45px;
+        .table {
+            border: none;
 
-            @include desktop() {
-                right: 45%;
-                top: -30%;
+            &:hover {
+                border: 1px solid grey;
             }
         }
-    }
 
-    #breeder-questions {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
-        background-size: cover;
+        &.one {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-brita-pup.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-brita-pup.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.two {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+            background-size: cover;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+                background-size: cover;
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.three {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+            background-size: cover;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+                background-size: cover;
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+                background-size: cover;
+            }
+        }
     }
 }
 
 // =========================
 // Events Page
 // =========================
-#page-events {
-    // .hero {
-    //     background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center center;
-    //     background-size: cover;
-
-    //     @include desktop() {
-    //         background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-lara3.jpg") no-repeat center 25%;
-    //         background-size: cover;
-    //         height: 600px;
-    //     }
-    // }
-
+//event img: 1000x338
+#article.page-events {
     background: $dark-medium;
 
     .event-cards {
@@ -1209,6 +1425,7 @@ footer {
 
         @include desktop {
             width: 70%;
+            max-width: 1000px;
         }
 
         &-date {
@@ -1234,6 +1451,20 @@ footer {
         &-bottom {
             padding: 5%;
             text-align: left;
+
+            h2 {
+                margin-top: 0;
+            }
+
+            p {
+                margin-top: 10px;
+            }
+
+            .line::after {
+                @include desktop {
+                    right: -33%;
+                }
+            }
         }
 
         &-top {
@@ -1258,6 +1489,117 @@ footer {
     }
 }
 
+// =========================
+// Rescue page
+// =========================
 
+// =========================
+// Membership page
+// =========================
+#membership {
+    background: $dark-light;
+
+    .membership-form {
+        padding: 5%;
+
+        iframe {
+            height: 3650px;
+
+            @include desktop() {
+                height: 3300px;
+            }
+        }
+
+    }
+}
+
+// =========================
+// Become a Registered Breeder Page
+// =========================
+
+// =========================
+// Voting page
+// =========================
+#voting {
+    background: $dark-light;
+
+    .voting-form {
+        padding: 5%;
+
+        iframe {
+            height: 3520px;
+
+            @include desktop() {
+                height: 2590px;
+            }
+        }
+    }
+}
+
+// =========================
+// Stroies/articles
+// =========================
+#article.unethical-breeders {
+    .event-card {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
+        background-size: cover;
+        background-attachment: fixed;
+        padding-top: 10%;
+        padding-bottom: 10%;
+        //         display: flex;
+        //         flex-direction: column;
+        //         width: 93%;
+        //         max-width: 1000px;
+
+        @include desktop {
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        &-wrapper {
+            background: $dark;
+            width: 93%;
+            max-width: 1000px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &-bottom {
+            text-align: left;
+            padding: 5%;
+        }
+
+        &-title {
+            text-align: center;
+            // padding-bottom: 10%;
+        }
+
+        &-ending {
+            text-align: center;
+            // padding: 10%;
+        }
+
+        &-text {
+            // padding-top: 25px;
+            // padding-bottom: 25px;
+        }
+
+        hr {
+            width: 50px;
+            height: 1px;
+            background-color: $gold;
+            border: none;
+        }
+    }
+}
+
+
+// #breeder-questions {
+//     background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+//     background-size: cover;
+// }
 
 @import "external-edits";
