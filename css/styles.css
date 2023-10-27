@@ -568,7 +568,7 @@ li {
 .line::after {
   content: "";
   display: block;
-  width: 45px;
+  width: 3rem;
   height: 1px;
   background: #d5a269;
   position: absolute;
@@ -909,7 +909,7 @@ footer .footer .credentials {
     padding-left: 38%;
   }
   .quick-words-bottom .line::after {
-    right: -27%;
+    right: -4rem;
   }
 }
 .quick-words-bottom a {
@@ -1160,7 +1160,7 @@ footer .footer .credentials {
 }
 @media (min-width: 768px) {
   .news-tile-text .read-more .line::after {
-    left: 103%;
+    right: -4rem;
   }
 }
 .news .tile-stories,
@@ -1187,7 +1187,7 @@ footer .footer .credentials {
 }
 @media (min-width: 768px) {
   #page-breed .stats-set {
-    max-width: 25%;
+    max-width: 23%;
   }
 }
 #page-breed .stats-number {
@@ -1324,10 +1324,10 @@ footer .footer .credentials {
     padding-bottom: 25%;
   }
 }
-.square.one {
+.square.border {
   background: #202020;
 }
-.square.one .table {
+.square.border .table {
   border: 1px solid grey;
 }
 .square.two {
@@ -1422,21 +1422,16 @@ footer .footer .credentials {
   margin: 10px auto 50px;
 }
 #page-tcna .quick-words .line::after {
-  right: -22%;
-}
-@media (min-width: 768px) {
-  #page-tcna .quick-words .line::after {
-    right: -25%;
-  }
+  right: -4rem;
 }
 
 #page-breeders .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-mobile.jpg") no-repeat center center;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppy-mom-mobile.jpg") no-repeat center center;
   background-size: cover;
 }
 @media (min-width: 768px) {
   #page-breeders .hero {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-desktop.jpg") no-repeat center center;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppy-mom.jpg") no-repeat center 20%;
     background-size: cover;
     height: 600px;
   }
@@ -1481,27 +1476,19 @@ footer .footer .credentials {
   background-size: cover;
 }
 #page-breeders .square.two {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
-  background-size: cover;
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/unethical-breeding-small.jpg") no-repeat center;
   background-size: cover;
 }
 #page-breeders .square.two:hover {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
-  background-size: cover;
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/unethical-breeding-small.jpg") no-repeat center;
   background-size: cover;
 }
 #page-breeders .square.three {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
-  background-size: cover;
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat center;
   background-size: cover;
 }
 #page-breeders .square.three:hover {
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
-  background-size: cover;
-  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -1556,47 +1543,170 @@ footer .footer .credentials {
 #article.page-events .event-card-bottom p {
   margin-top: 10px;
 }
-@media (min-width: 768px) {
-  #article.page-events .event-card-bottom .line::after {
-    right: -33%;
-  }
+#article.page-events .event-card-bottom .line::after {
+  right: -4rem;
 }
 #article.page-events .event-card-top {
   position: relative;
 }
 
-#page-stories .hero {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
+#page-stories {
+  background: #202020;
+}
+#page-stories .stories-headline {
+  padding: 50px;
+}
+#page-stories .story-container {
+  columns: 1 auto;
+  column-gap: 0.5rem;
+  padding: 0.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 480px) {
+  #page-stories .story-container {
+    columns: 2 auto;
+    column-gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  #page-stories .story-container {
+    columns: 3 auto;
+    column-gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+#page-stories .story-container .story-card {
+  width: 100%;
+  background: rgb(36, 36, 36);
+  margin: 0 1rem 1rem 0;
+  display: inline-block;
+  text-align: left;
+  box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+  position: relative;
+}
+#page-stories .story-container .story-card-bottom {
+  padding: 25px;
+}
+#page-stories .story-container .story-card p:nth-of-type(2) {
+  margin-top: 10px;
+}
+#page-stories .story-container .story-card img {
+  width: 100%;
+}
+#page-stories .story-container .story-card .read-more a::before {
+  content: "";
+  display: block;
+  inset: 0;
+  position: absolute;
+}
+#page-stories .story-container hr {
+  width: 100%;
+  height: 1px;
+  background-color: #d5a269;
+  border: none;
+}
+
+#membership .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/tornjak-lipa.jpg") no-repeat center bottom;
   background-size: cover;
 }
 @media (min-width: 768px) {
-  #page-stories .hero {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
+  #membership .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/tornjak-lipa.jpg") no-repeat center 75%;
     background-size: cover;
     height: 600px;
   }
 }
-
-#membership {
-  background: rgb(36, 36, 36);
-}
-#membership .membership-form {
-  padding: 5%;
+#membership .overlap .offset-card {
+  padding: 1rem 0 0 0;
 }
 #membership .membership-form iframe {
-  height: 3650px;
+  height: 4525px;
 }
 @media (min-width: 768px) {
   #membership .membership-form iframe {
-    height: 3300px;
+    height: 3450px;
   }
+}
+#membership .square.one {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+  background-size: cover;
+}
+#membership .square.one:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+  background-size: cover;
+}
+#membership .square.two {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+  background-size: cover;
+}
+#membership .square.two:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+  background-size: cover;
+}
+#membership .square.three {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/tornjak-brita-pup.jpg") no-repeat center;
+  background-size: cover;
+}
+#membership .square.three:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/tornjak-brita-pup.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#breeder-registration .hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/puppies-mobile.jpg") no-repeat center bottom;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  #breeder-registration .hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/puppies-desktop.jpg") no-repeat center 75%;
+    background-size: cover;
+    height: 600px;
+  }
+}
+#breeder-registration .overlap .offset-card {
+  padding: 1rem 0 0 0;
+}
+#breeder-registration iframe {
+  height: 1650px;
+}
+@media (min-width: 768px) {
+  #breeder-registration iframe {
+    height: 1300px;
+  }
+}
+#breeder-registration .square.one {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+  background-size: cover;
+}
+#breeder-registration .square.one:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+  background-size: cover;
+}
+#breeder-registration .square.two {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+  background-size: cover;
+}
+#breeder-registration .square.two:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+  background-size: cover;
+}
+#breeder-registration .square.three {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/tornjak-puppies2.jpg") no-repeat center;
+  background-size: cover;
+}
+#breeder-registration .square.three:hover {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/tornjak-puppies2.jpg") no-repeat center;
+  background-size: cover;
 }
 
 #voting {
   background: rgb(36, 36, 36);
 }
-#voting .voting-form {
-  padding: 5%;
+#voting .overlap .offset-card {
+  padding: 1rem 0 0 0;
 }
 #voting .voting-form iframe {
   height: 3520px;
@@ -1607,7 +1717,8 @@ footer .footer .credentials {
   }
 }
 
-#article.unethical-breeders .event-card {
+#article .event-card,
+#interview .event-card {
   background: linear-gradient(to bottom, rgba(11, 11, 11, 0.9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
   background-size: cover;
   background-attachment: fixed;
@@ -1615,33 +1726,71 @@ footer .footer .credentials {
   padding-bottom: 10%;
 }
 @media (min-width: 768px) {
-  #article.unethical-breeders .event-card {
+  #article .event-card,
+  #interview .event-card {
     padding-top: 5%;
     padding-bottom: 5%;
   }
 }
-#article.unethical-breeders .event-card-wrapper {
+#article .event-card-wrapper,
+#interview .event-card-wrapper {
   background: #1a1a1a;
   width: 93%;
   max-width: 1000px;
   margin: 0 auto;
 }
-#article.unethical-breeders .event-card-wrapper img {
+#article .event-card-wrapper img,
+#interview .event-card-wrapper img {
   width: 100%;
 }
-#article.unethical-breeders .event-card-bottom {
+#article .event-card-bottom,
+#interview .event-card-bottom {
   text-align: left;
   padding: 5%;
 }
-#article.unethical-breeders .event-card-title {
+#article .event-card-title,
+#interview .event-card-title {
   text-align: center;
 }
-#article.unethical-breeders .event-card-ending {
+#article .event-card-ending,
+#interview .event-card-ending {
   text-align: center;
 }
-#article.unethical-breeders .event-card hr {
-  width: 50px;
+#article .event-card hr,
+#interview .event-card hr {
+  width: 3rem;
   height: 1px;
   background-color: #d5a269;
   border: none;
+}
+
+#interview .event-card {
+  background: linear-gradient(to bottom, rgba(11, 11, 11, 0.75) 15%, rgba(11, 11, 11, 0.75) 100%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#interview .paragraph-large {
+  margin-top: 1.5rem;
+}
+#interview .read-more {
+  padding-top: 1rem;
+}
+#interview .read-more span {
+  display: block;
+  line-height: 0;
+}
+@media (min-width: 768px) {
+  #interview .read-more span {
+    display: inline-block;
+  }
+}
+#interview .line::after {
+  right: -4rem;
+  top: 75%;
+}
+@media (min-width: 768px) {
+  #interview .line::after {
+    right: -4rem;
+    top: 50%;
+  }
 }

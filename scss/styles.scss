@@ -15,6 +15,7 @@ $dark-medium: #202020;
 $dark-light: rgb(36 36 36);
 $white: #F3F3F3;
 $off-white: #e8e8e8;
+$break-small: 480px;
 $break-med: 600px;
 $break-lg: 768px;
 $break-xl: 1024px;
@@ -29,6 +30,12 @@ $line-height-lg: 1.75rem;
 $shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
 
 // Mixins
+@mixin mobile-only {
+    @media (min-width: $break-small) {
+        @content;
+    }
+}
+
 @mixin tablet-only {
     @media (min-width: $break-med) and (max-width: #{$break-lg - 1px}) {
         @content;
@@ -305,7 +312,7 @@ li {
     &::after {
         content: "";
         display: block;
-        width: 45px;
+        width: 3rem;
         height: 1px;
         background: $gold;
         position: absolute;
@@ -682,7 +689,7 @@ footer {
             }
 
             .line::after {
-                right: -27%;
+                right: -4rem;
             }
         }
 
@@ -966,7 +973,7 @@ footer {
 
             .line::after {
                 @include desktop {
-                    left: 103%;
+                    right: -4rem;
                 }
             }
         }
@@ -1002,7 +1009,7 @@ footer {
         flex-basis: 50%;
 
         @include desktop {
-            max-width: 25%;
+            max-width: 23%;
 
         }
     }
@@ -1157,7 +1164,7 @@ footer {
 
     }
 
-    &.one {
+    &.border {
         background: $dark-medium;
 
         .table {
@@ -1293,11 +1300,7 @@ footer {
 
     .quick-words {
         .line::after {
-            right: -22%;
-
-            @include desktop {
-                right: -25%;
-            }
+            right: -4rem;
         }
     }
 }
@@ -1307,11 +1310,11 @@ footer {
 // =========================
 #page-breeders {
     .hero {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-mobile.jpg") no-repeat center center;
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppy-mom-mobile.jpg") no-repeat center center;
         background-size: cover;
 
         @include desktop() {
-            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppies-desktop.jpg") no-repeat center center;
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/puppy-mom.jpg") no-repeat center 20%;
             background-size: cover;
             height: 600px;
         }
@@ -1371,29 +1374,21 @@ footer {
         }
 
         &.two {
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
-            background-size: cover;
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/unethical-breeding-small.jpg") no-repeat center;
             background-size: cover;
 
             &:hover {
-                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
-                background-size: cover;
-                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-lipa.jpg") no-repeat center;
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/unethical-breeding-small.jpg") no-repeat center;
                 background-size: cover;
             }
         }
 
         &.three {
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
-            background-size: cover;
-            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat center;
             background-size: cover;
 
             &:hover {
-                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
-                background-size: cover;
-                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat 0 15%;
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("../assets/img/tornjak-puppies2.jpg") no-repeat center;
                 background-size: cover;
             }
         }
@@ -1461,9 +1456,7 @@ footer {
             }
 
             .line::after {
-                @include desktop {
-                    right: -33%;
-                }
+                right: -4rem;
             }
         }
 
@@ -1475,16 +1468,72 @@ footer {
 
 // =========================
 // Stories Page
-// =========================
+// =========================.
+// img 250 x 150
 #page-stories {
-    .hero {
-        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat center center;
-        background-size: cover;
+    background: $dark-medium;
 
-        @include desktop() {
-            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/tornjak-family.jpg") no-repeat top left;
-            background-size: cover;
-            height: 600px;
+    .stories-headline {
+        padding: 50px;
+    }
+
+    .story-container {
+        columns: 1 auto;
+        column-gap: .5rem;
+        padding: .5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @include mobile-only {
+            columns: 2 auto;
+            column-gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        @include desktop {
+            columns: 3 auto;
+            column-gap: 1.5rem;
+            padding: 1.5rem;
+        }
+
+        .story-card {
+            width: 100%;
+            background: $dark-light;
+            margin: 0 1rem 1rem 0;
+            display: inline-block;
+            text-align: left;
+            box-shadow: $shadow;
+            position: relative;
+
+            &-bottom {
+                padding: 25px;
+            }
+
+            p:nth-of-type(2) {
+                margin-top: 10px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            //find way to not overflow?
+            // .line::after {
+            //     right: -4rem;
+            // }
+            .read-more a::before {
+                content: "";
+                display: block;
+                inset: 0;
+                position: absolute;
+            }
+        }
+
+        hr {
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            border: none;
         }
     }
 }
@@ -1494,37 +1543,141 @@ footer {
 // =========================
 
 // =========================
-// Membership page
+// Membership Form
 // =========================
 #membership {
-    background: $dark-light;
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/tornjak-lipa.jpg") no-repeat center bottom;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/tornjak-lipa.jpg") no-repeat center 75%;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+
+    .overlap .offset-card {
+        padding: 1rem 0 0 0;
+    }
 
     .membership-form {
-        padding: 5%;
+        // padding: 5%;
 
         iframe {
-            height: 3650px;
+            height: 4525px;
 
             @include desktop() {
-                height: 3300px;
+                height: 3450px;
             }
         }
 
     }
+
+    .square {
+        &.one {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.two {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.three {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/tornjak-brita-pup.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/tornjak-brita-pup.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
 }
 
 // =========================
-// Become a Registered Breeder Page
+// Registered Breeder Form
 // =========================
+#breeder-registration {
+    .hero {
+        background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/puppies-mobile.jpg") no-repeat center bottom;
+        background-size: cover;
+
+        @include desktop() {
+            background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("/assets/img/puppies-desktop.jpg") no-repeat center 75%;
+            background-size: cover;
+            height: 600px;
+        }
+    }
+
+    .overlap .offset-card {
+        padding: 1rem 0 0 0;
+    }
+
+    iframe {
+        height: 1650px;
+
+        @include desktop() {
+            height: 1300px;
+        }
+    }
+
+    .square {
+        &.one {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/show-zadok.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.two {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/unethical-breeding-small.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+
+        &.three {
+            background: linear-gradient(to bottom, rgba(11, 11, 11, .7) 15%, rgba(11, 11, 11, 0.7) 100%), url("/assets/img/tornjak-puppies2.jpg") no-repeat center;
+            background-size: cover;
+
+            &:hover {
+                background: linear-gradient(to bottom, rgba(11, 11, 11, .5) 15%, rgba(11, 11, 11, 0.5) 100%), url("/assets/img/tornjak-puppies2.jpg") no-repeat center;
+                background-size: cover;
+            }
+        }
+    }
+}
 
 // =========================
-// Voting page
+// Voting Form
 // =========================
 #voting {
     background: $dark-light;
 
+    .overlap .offset-card {
+        padding: 1rem 0 0 0;
+    }
+
     .voting-form {
-        padding: 5%;
 
         iframe {
             height: 3520px;
@@ -1536,20 +1689,21 @@ footer {
     }
 }
 
+
+
 // =========================
-// Stroies/articles
+// Each Stroy/article
 // =========================
-#article.unethical-breeders {
+//img 1000 x 400
+//img preview 450 x 270
+#article,
+#interview {
     .event-card {
         background: linear-gradient(to bottom, rgba(11, 11, 11, .9) 15%, rgba(11, 11, 11, 0.9) 100%), url("../assets/img/background-sheep.webp") no-repeat 40% 50%;
         background-size: cover;
         background-attachment: fixed;
         padding-top: 10%;
         padding-bottom: 10%;
-        //         display: flex;
-        //         flex-direction: column;
-        //         width: 93%;
-        //         max-width: 1000px;
 
         @include desktop {
             padding-top: 5%;
@@ -1570,6 +1724,7 @@ footer {
         &-bottom {
             text-align: left;
             padding: 5%;
+
         }
 
         &-title {
@@ -1588,18 +1743,54 @@ footer {
         }
 
         hr {
-            width: 50px;
+            width: 3rem;
             height: 1px;
             background-color: $gold;
             border: none;
         }
     }
+
 }
 
+#interview {
+    .event-card {
+        background: linear-gradient(to bottom, rgba(11, 11, 11, .75) 15%, rgba(11, 11, 11, 0.75) 100%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
+        background-size: cover;
+        background-attachment: fixed;
+    }
 
-// #breeder-questions {
-//     background: linear-gradient(to right, rgba(0, 0, 0, .75) 15%, rgba(0, 0, 0, 0.75) 90%), url("../assets/img/grassy-field.jpg") no-repeat 40% 50%;
-//     background-size: cover;
-// }
+    .paragraph-large {
+        margin-top: 1.5rem;
+    }
+
+    .read-more {
+        padding-top: 1rem;
+
+        span {
+            display: block;
+            line-height: 0;
+
+            @include desktop {
+                display: inline-block;
+            }
+        }
+
+        // &:hover {
+        //     text-decoration: underline;
+        // }
+    }
+
+    .line::after {
+        right: -4rem;
+        top: 75%;
+
+        @include desktop {
+            right: -4rem;
+            top: 50%;
+        }
+    }
+
+}
+
 
 @import "external-edits";
