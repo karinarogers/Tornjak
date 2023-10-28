@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../scss/styles.scss" />
 
     <!-- OpenGraph -->
     <meta property="og:locale" content="en_US" />
@@ -35,13 +35,14 @@
     <meta property="og:image:alt" content="Tornjak Club of North America" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="assets/img/og-logo.jpg" />
+    <script type="module" src="/src/index.js"></script>
 </head>
 
 <body>
     <header>
         <div id="nav" role="navigation">
             <div class="logo" role="logo">
-                <img class="logo-img" alt="" src="assets/img/tcna-logo-sm.png">
+                <img class="logo-img" alt="" src="assets/img/tcna-logo-sm.png" />
                 <p class="logo-text"><a href="/">TCNA</a></p>
             </div>
             <button class="hamburger">
@@ -49,22 +50,22 @@
                 <span class="close-icon material-icons">close</span>
             </button>
             <ul class="nav-wrapper">
-                <li class="nav-item"><a href="/about-breed.html">The Breed</a></li>
-                <li class="nav-item"><a href="/about-tcna.html">The Club</a></li>
-                <li class="nav-item"><a href="/breeders.html">Breeders</a></li>
-                <li class="nav-item"><a href="/events.html">Events</a></li>
-                <li class="nav-item"><a href="/articles.html">Articles</a></li>
+                <li class="nav-item"><a href="./about-breed.html">The Breed</a></li>
+                <li class="nav-item"><a href="./about-tcna.html">The Club</a></li>
+                <li class="nav-item"><a href="./breeders.html">Breeders</a></li>
+                <li class="nav-item"><a href="./events.html">Events</a></li>
+                <li class="nav-item"><a href="./articles.html">Articles</a></li>
             </ul>
         </div>
     </header>
 
-    <main id="membership">
+    <main id="breeder-registration">
         <section class="hero">
             <div class="two-col">
                 <div class="two-col-wrapper">
                     <div class="two-col-text">
                         <h3 class="title-small">Become a TCNA</h3>
-                        <h2>Registered Member</h2>
+                        <h2>Registered Breeder</h2>
                     </div>
                     <div class="two-col-text-block">
                         <p>
@@ -82,21 +83,35 @@
             </div>
         </section>
 
-
         <section class="overlap">
             <div class="overlap-quote">
                 <div class="offset-card">
-                    <section class="membership-form">
+                    <section class="breeder-registration-form">
                         <iframe
-                            src="https://docs.google.com/forms/d/e/1FAIpQLSexKK2P-fbNDzcxd-r3xoVFjQHkkQGBak3xQyKxbQl7LdqQlw/viewform?embedded=true"
-                            width="100%" height="3235" scrolling="no" frameborder="0" marginheight="0"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSc8UM8ro8K5li_lnSki8TPz-wpMh2BOH06Fushpfac5J54nIQ/viewform?embedded=true"
+                            width="100%" height="2590" frameborder="0" marginheight="0" scrolling="no"
                             marginwidth="0">Loading…</iframe>
                     </section>
                 </div>
             </div>
         </section>
 
-
+        <section class="quick-words hide">
+            <div class="quick-words-wrapper">
+                <div class="quick-words-top">
+                    <div class="quick-words-title">
+                        <p class="title-small">Fierce Guardian</p>
+                        <h2>Steady Disposition</h2>
+                    </div>
+                    <img src="assets/img/tornjak-zadok.jpg">
+                </div>
+                <div class="quick-words-bottom">
+                    <p class="text-block">Responsible breeders prioritize the well-being of their dogs, while
+                        irresponsible breeders prioritize profit.</p>
+                    <p class="read-more"><a class="line" href="./about-breed.html">read more</a></p>
+                </div>
+            </div>
+        </section>
 
         <section class="squares">
             <div class="square bg one">
@@ -118,7 +133,7 @@
                         <div class="table-cell">
                             <div class="card-text">
                                 <p class="title-small">Red Flags for</p>
-                                <h2><a href="/articles/unethical-breeding.html">unethical<br>breeding</a>
+                                <h2><a href="./articles/unethical-breeding.html">unethical<br>breeding</a>
                                 </h2>
                             </div>
                         </div>
@@ -130,8 +145,8 @@
                     <div class="table">
                         <div class="table-cell">
                             <div class="card-text">
-                                <p class="title-small">Become a</p>
-                                <h2><a href="/breeder-registration.html">registered tcna<br>breeder</a>
+                                <p class="title-small">Questions to ask</p>
+                                <h2><a href="./articles/before-you-buy.html">before you buy</a>
                                 </h2>
                             </div>
                         </div>
@@ -193,7 +208,6 @@
             </div>
         </div>
     </footer>
-    <script src="index.js"></script>
 </body>
 
 </html>

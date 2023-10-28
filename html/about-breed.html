@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
     <!-- stylesheet -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../scss/styles.scss" />
 
     <!-- OpenGraph -->
     <meta property="og:locale" content="en_US" />
@@ -35,13 +35,14 @@
     <meta property="og:image:alt" content="Tornjak Club of North America" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="assets/img/og-logo.jpg" />
+    <script type="module" src="/src/index.js"></script>
 </head>
 
 <body>
     <header>
         <div id="nav" role="navigation">
             <div class="logo" role="logo">
-                <img class="logo-img" alt="" src="assets/img/tcna-logo-sm.png" />
+                <img class="logo-img" alt="" src="/assets/img/tcna-logo-sm.png" />
                 <p class="logo-text"><a href="/">TCNA</a></p>
             </div>
             <button class="hamburger">
@@ -49,11 +50,11 @@
                 <span class="close-icon material-icons">close</span>
             </button>
             <ul class="nav-wrapper">
-                <li class="nav-item"><a href="/about-breed.html">The Breed</a></li>
-                <li class="nav-item"><a href="/about-tcna.html">The Club</a></li>
-                <li class="nav-item"><a href="/breeders.html">Breeders</a></li>
-                <li class="nav-item"><a href="/events.html">Events</a></li>
-                <li class="nav-item"><a href="/articles.html">Articles</a></li>
+                <li class="nav-item"><a href="./about-breed.html">The Breed</a></li>
+                <li class="nav-item"><a href="./about-tcna.html">The Club</a></li>
+                <li class="nav-item"><a href="./breeders.html">Breeders</a></li>
+                <li class="nav-item"><a href="./events.html">Events</a></li>
+                <li class="nav-item"><a href="./articles.html">Articles</a></li>
             </ul>
         </div>
     </header>
@@ -172,7 +173,7 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <a class="main-btn" tabindex="0" href="/about-breed.html">
+                            <a class="main-btn" tabindex="0" href="./about-breed.html">
                                 <span class="main-btn-text">History</span>
                             </a>
                         </div>
@@ -183,7 +184,7 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <a class="main-btn" tabindex="0" href="/about-breed.html">
+                            <a class="main-btn" tabindex="0" href="./about-breed.html">
                                 <span class="main-btn-text">Health</span>
                             </a>
                         </div>
@@ -194,7 +195,7 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <a class="main-btn" tabindex="0" href="/about-breed.html">
+                            <a class="main-btn" tabindex="0" href="./about-breed.html">
                                 <span class="main-btn-text">Appearance</span>
                             </a>
                         </div>
@@ -205,7 +206,7 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <a class="main-btn" tabindex="0" href="/breeders.html">
+                            <a class="main-btn" tabindex="0" href="./about-breed.html">
                                 <span class="main-btn-text">Grooming</span>
                             </a>
                         </div>
@@ -216,7 +217,7 @@
                 <div class="content">
                     <div class="table">
                         <div class="table-cell">
-                            <a class="main-btn" tabindex="0" href="/rescue.html">
+                            <a class="main-btn" tabindex="0" href="./about-breed.html">
                                 <span class="main-btn-text">Exercise</span>
                             </a>
                         </div>
@@ -318,7 +319,6 @@
             </div>
         </div>
     </footer>
-    <script src="index.js"></script>
 </body>
 
 </html>
