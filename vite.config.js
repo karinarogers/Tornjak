@@ -36,25 +36,37 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
-                main: resolve(__dirname, 'index.html'),
+                'index.html': resolve(__dirname, 'index.html'),
                 ...pairs,
-
-                // 'about-breed.html': resolve(__dirname, 'html/about-breed.html'),
-                // 'about-tcna.html': resolve(__dirname, 'html/about-tcna.html'),
-                // 'articles.html': resolve(__dirname, 'html/articles.html'),
-                // 'breeder-registration.html': resolve(__dirname, 'html/breeder-registration.html'),
-                // 'breeders.html': resolve(__dirname, 'html/breeders.html'),
-                // 'events.html': resolve(__dirname, 'html/events.html'),
-                // 'membership.html': resolve(__dirname, 'html/membership.html'),
-                // 'rescue.html': resolve(__dirname, 'html/rescue.html'),
-                // 'voting.html': resolve(__dirname, 'html/voting.html'),
-
-                // 'before-you-buy.html': resolve(__dirname, 'html/articles/before-you-buy.html'),
-                // 'meet-kisa-and-zadok.html': resolve(__dirname, 'html/articles/meet-kisa-and-zadok.html'),
-                // 'meet-scylla-and-dagon.html': resolve(__dirname, 'html/articles/meet-scylla-and-dagon.html'),
-                // 'meet-vin-and-family.html': resolve(__dirname, 'html/articles/meet-vin-and-family.html'),
-                // 'unethical-breeding.html': resolve(__dirname, 'html/articles/unethical-breeding.html'),
             },
+            output: {
+                assetFileNames: (info) => {
+                    const { name } = info;
+                    const ext = path.extname(name || '').substring(1).toLowerCase();
+                    const newExt =
+                        ext === 'jpg' || ext === 'png' || ext === 'webp'
+                            ? 'img'
+                            : ext === 'css'
+                                ? ''
+                                : ext === 'svg'
+                                    ? 'svg'
+                                    : ext;
+
+                    return `assets/${newExt}/[name]-[hash][extname]`;
+                },
+                chunkFileNames: (info) => {
+                    const { name } = info;
+                    //console.log('chunkFileNames', name);
+                    return `assets/[name]-[hash].js`;
+                },
+                entryFileNames: (info) => {
+                    const { name: entryName } = info;
+
+                    const { name, ext } = path.parse(entryName);
+                    console.log('chunkFileNames', info.name, `assets/${name}-[hash]${ext}`);
+                    return `assets/${name}-[hash]${ext}`;
+                },
+            }
         },
     },
 });
