@@ -25,7 +25,7 @@ function collectHtmls(folder) {
     return rv;
 }
 
-const htmlsFolder = join(__dirname, './html');
+const htmlsFolder = join(__dirname, './pages');
 const ourHtmls = collectHtmls(htmlsFolder);
 
 const pairs = Object.fromEntries(ourHtmls.map((item) => ([path.basename(item), item])));
@@ -33,6 +33,7 @@ const pairs = Object.fromEntries(ourHtmls.map((item) => ([path.basename(item), i
 console.log(pairs);
 
 export default defineConfig({
+    base: '',
     build: {
         rollupOptions: {
             input: {
@@ -40,6 +41,7 @@ export default defineConfig({
                 ...pairs,
             },
             output: {
+                // preserveModules: true,
                 assetFileNames: (info) => {
                     const { name } = info;
                     const ext = path.extname(name || '').substring(1).toLowerCase();
@@ -55,17 +57,16 @@ export default defineConfig({
                     return `assets/${newExt}/[name]-[hash][extname]`;
                 },
                 chunkFileNames: (info) => {
-                    const { name } = info;
-                    //console.log('chunkFileNames', name);
                     return `assets/[name]-[hash].js`;
                 },
-                entryFileNames: (info) => {
-                    const { name: entryName } = info;
+                // entryFileNames: (info) => {
+                //     const { name: entryName } = info;
 
-                    const { name, ext } = path.parse(entryName);
-                    console.log('chunkFileNames', info.name, `assets/${name}-[hash]${ext}`);
-                    return `assets/${name}-[hash]${ext}`;
-                },
+                //     const { name, ext } = path.parse(entryName);
+                //     console.log('chunkFileNames', info.name, '--->>', `assets/${name}`);
+                //     return `assets/${name}-any`;
+                //     //return `assets/[name]`;
+                // },
             }
         },
     },

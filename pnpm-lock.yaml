@@ -8,6 +8,9 @@ dependencies:
   sass:
     specifier: ^1.69.5
     version: 1.69.5
+  swiper:
+    specifier: ^11.0.3
+    version: 11.0.3
   vite:
     specifier: ^4.5.0
     version: 4.5.0(sass@1.69.5)
@@ -384,6 +387,11 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /swiper@11.0.3:
+    resolution: {integrity: sha512-MyV9ooQsriAe2EibeamqewLjgCfSvl2xoyratl6S3ln5BXDL4BzlO6mxcbLMCzQL6Z60b/u0AS/nKrepL0+TAg==}
+    engines: {node: '>= 4.7.0'}
     dev: false
 
   /to-regex-range@5.0.1:

@@ -1,3 +1,9 @@
+//swiper imports
+import Swiper from 'swiper';
+import { Navigation, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css/bundle';
+
+// mobile menu
 const ui = {
     menu: null,
     menuItems: null,
@@ -37,3 +43,56 @@ function main() {
 }
 
 main();
+
+
+// swiper cards on TCNA page
+
+//https://codepen.io/kristen17/pen/BaGEeKe
+var swiper = new Swiper(".swiper", {
+    // modules: [Navigation],
+    modules: [Navigation, EffectCoverflow],
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 6,
+        depth: 25,
+        modifier: 4,
+        slideShadows: true
+    },
+    loop: false,
+    // Navigation arrows
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+    },
+    keyboard: {
+        enabled: true
+    },
+    mousewheel: {
+        thresholdDelta: 70
+    },
+    initialSlide: 1,
+    on: {
+        click(event) {
+            swiper.slideTo(this.clickedIndex);
+        }
+    },
+    // on: {
+    //   breakpoint: function (swiper, breakpoint) {
+    //     console.log({breakpoint});
+    //   }
+    // },
+    breakpoints: {
+        560: {
+            slidesPerView: 1,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        1024: {
+            slidesPerView: 3,
+        }
+    }
+});
