@@ -1288,44 +1288,187 @@ footer {
         }
     }
 
-    .standards {
-        background-color: #202020;
-
-        .offset-card {
-            margin: 0;
-            // box-shadow: $shadow;
-
-            // &.left {
-            //     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            // }
-
-            &.center {
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            }
-
-            // &.right {
-            //     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-            // }
-        }
-
-        .overlap-quote {
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
-
-        .main-btn {
-            display: block;
-            width: 65%;
-            margin: 10px auto 50px;
-        }
-    }
-
     .quick-words {
         .line::after {
             right: -4rem;
         }
     }
+
+    .no-border {
+        border: none;
+    }
+
+    .cta {
+        background: $dark-medium;
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+
+    #goals-mission {
+        .goal-wrapper {
+            width: calc(min(52rem, 90%));
+        }
+
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        column-gap: 3rem;
+        padding-block: min(20vh, 3rem);
+        text-align: center;
+        background: $dark-medium;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            letter-spacing: 0.5rem;
+            // line-height: 1.2;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+
+    .swiper-wrapper div {
+        width: 350px;
+    }
+
+    .swiper-container {
+        position: relative;
+        --swiper-theme-color: #fff;
+        height: 500px;
+        max-width: 1200px;
+        margin-top: 30px;
+
+        --swiper-navigation-top-offset: 50%;
+        --swiper-navigation-sides-offset: -30px;
+        --swiper-navigation-color: var(--swiper-theme-color);
+
+    }
+
+    .swiper-wrapper {
+        @include desktop {
+            transform: none !important;
+        }
+    }
+
+
+    .swiper-slide {
+        border: 1px solid $gold;
+        box-shadow: -1px 5px 15px black;
+
+        h2 {
+            padding: 0;
+            font-size: 1.6rem;
+            margin-right: -0.75rem;
+        }
+
+        h3 {
+            padding: 0 1rem;
+            color: $dark;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            margin-bottom: 0.625rem;
+            letter-spacing: 0.4px;
+            position: relative;
+        }
+
+        p {
+            line-height: 1.6;
+            // font-size: 0.8rem;
+            color: black;
+        }
+
+        .slide-content {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            width: 90%;
+        }
+
+        // .author {
+        //     grid-template-columns: 1fr;
+        //     justify-items: center;
+        //     position: absolute;
+        //     bottom: -90px;
+        //     width: 100%;
+        //     display: none;
+        //     opacity: 0;
+
+        //     span {
+        //         color: #111;
+        //         display: block;
+        //         margin: 5px 0 10px 0;
+        //         // font-weight: 600;
+        //         // font-size: 0.9rem;
+        //     }
+
+        //     img {
+        //         width: 60px;
+        //         height: 60px;
+        //         object-fit: cover;
+        //         border-radius: 50%;
+        //         border: 3.5px solid white;
+        //     }
+
+        //     ul {
+        //         display: flex;
+        //         align-items: center;
+
+        //         li {
+        //             svg {
+        //                 width: 20px;
+        //                 color: orange;
+        //             }
+        //         }
+        //     }
+        // }
+    }
+
+    .swiper-slide-active .author {
+        display: grid;
+        opacity: 1;
+    }
+
+    .swiper-slide--one {
+        background: $off-white;
+    }
+
+    .swiper-slide--two {
+        background: $off-white;
+    }
+
+    .swiper-slide--three {
+        background: $off-white;
+    }
 }
+
+.swiper-button {
+    border-radius: 50%;
+    top: 47%;
+    width: 50px !important;
+    height: 50px !important;
+    box-shadow: 0px 2px 11px rgb(0 0 0 / 17%);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    display: none;
+
+    @media (min-width: 760px) {
+        display: flex;
+    }
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    content: none !important;
+}
+
 
 // =========================
 // Breeders Page
