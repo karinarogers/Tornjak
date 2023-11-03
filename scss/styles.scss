@@ -565,6 +565,11 @@ footer {
                 margin-left: 1.5%;
                 line-height: normal;
             }
+
+            span {
+                display: block;
+                position: relative;
+            }
         }
 
         .lines {
@@ -587,21 +592,21 @@ footer {
             }
 
             span::before {
-                left: 20%;
+                left: 3rem;
                 top: 75%;
 
                 @include desktop() {
-                    left: -7%;
+                    left: -2.5rem;
                     top: 50%;
                 }
             }
 
             span::after {
-                right: 23%;
+                right: 3.5rem;
                 top: 75%;
 
                 @include desktop() {
-                    right: -5%;
+                    right: -1.5rem;
                     top: 50%;
                 }
             }
@@ -935,6 +940,8 @@ footer {
 
         .paragraph-large {
             @include montserrat-bold();
+            text-transform: capitalize;
+            letter-spacing: normal;
         }
 
         .read-more {
