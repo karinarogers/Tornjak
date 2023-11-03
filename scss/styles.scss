@@ -1341,14 +1341,14 @@ footer {
 
     #goals-mission {
         .goal-wrapper {
-            width: calc(min(52rem, 90%));
+            width: calc(min(58rem, 90%));
         }
 
         position: relative;
         margin: 0 auto;
         width: 100%;
         column-gap: 3rem;
-        padding-block: min(20vh, 3rem);
+        padding-block: min(20vh, 4rem);
         text-align: center;
         background: $dark-medium;
         color: black;
@@ -1359,11 +1359,13 @@ footer {
 
         h2 {
             letter-spacing: 0.5rem;
-            // line-height: 1.2;
+            margin-bottom: 4rem;
         }
 
         p {
-            margin-top: 10px;
+            margin-top: 1rem;
+            @include montserrat();
+            color: black;
         }
     }
 
@@ -1412,9 +1414,8 @@ footer {
         }
 
         p {
-            line-height: 1.6;
-            // font-size: 0.8rem;
-            color: black;
+            // 
+
         }
 
         .slide-content {
@@ -1424,44 +1425,6 @@ footer {
             transform: translate(-50%, -45%);
             width: 90%;
         }
-
-        // .author {
-        //     grid-template-columns: 1fr;
-        //     justify-items: center;
-        //     position: absolute;
-        //     bottom: -90px;
-        //     width: 100%;
-        //     display: none;
-        //     opacity: 0;
-
-        //     span {
-        //         color: #111;
-        //         display: block;
-        //         margin: 5px 0 10px 0;
-        //         // font-weight: 600;
-        //         // font-size: 0.9rem;
-        //     }
-
-        //     img {
-        //         width: 60px;
-        //         height: 60px;
-        //         object-fit: cover;
-        //         border-radius: 50%;
-        //         border: 3.5px solid white;
-        //     }
-
-        //     ul {
-        //         display: flex;
-        //         align-items: center;
-
-        //         li {
-        //             svg {
-        //                 width: 20px;
-        //                 color: orange;
-        //             }
-        //         }
-        //     }
-        // }
     }
 
     .swiper-slide-active .author {
@@ -1600,7 +1563,8 @@ footer {
 // =========================
 //event img: 1000x338
 #events.page-events,
-#article.page-events {
+#article.page-events,
+#rescue.page-events {
     background: $dark-medium;
 
     .event-cards {
@@ -1752,6 +1716,32 @@ footer {
 // =========================
 // Rescue page
 // =========================
+#rescue {
+    .quick-words {
+        @include desktop {
+            height: 600px;
+        }
+    }
+
+    .chet {
+        border-bottom: none;
+        margin-top: 2rem;
+
+        img {
+            max-width: 250px;
+
+            @include desktop {
+                max-width: 400px;
+            }
+        }
+    }
+
+    .event-card {
+        @include desktop {
+            margin: 50px;
+        }
+    }
+}
 
 // =========================
 // Membership Form
@@ -1770,6 +1760,24 @@ footer {
 
     .overlap .offset-card {
         padding: 1rem 0 0 0;
+        background: white;
+        border: 1px solid $gold;
+    }
+
+    .two-col-text-block {
+        p {
+            flex: 1.75;
+        }
+
+        div {
+            flex: 1;
+            border: 1px white solid;
+            padding: 10px;
+
+            p:first-child {
+                text-decoration: underline;
+            }
+        }
     }
 
     .membership-form {
