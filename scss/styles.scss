@@ -186,7 +186,7 @@ li {
 
 //main button
 .main-btn {
-    display: inline-block;
+    // display: inline-block;
     width: min-content;
     border: 1px solid $gold;
     padding: 10px 14px;
@@ -494,7 +494,8 @@ footer {
             display: flex;
             flex-direction: column;
 
-            p {
+            p,
+            a {
                 letter-spacing: $spacing-medium-mobile;
                 line-height: 2.5rem;
                 color: $gold;
